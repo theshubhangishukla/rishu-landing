@@ -1,153 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>rishu studios</title>
-
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-
-  <!-- Tailwind & Fonts -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;600&family=Quicksand&display=swap" rel="stylesheet" />
-
-  <!-- AOS Animate On Scroll -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-  <!-- Custom Tailwind Config for Animation -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          animation: {
-            fadeIn: 'fadeIn 2s ease-out forwards',
-            bounceSlow: 'bounce 2s infinite',
-          },
-          keyframes: {
-            fadeIn: {
-              '0%': { opacity: 0, transform: 'translateY(20px)' },
-              '100%': { opacity: 1, transform: 'translateY(0)' },
-            },
-          }
-        }
-      }
-    };
-  </script>
-
-  <!-- Custom Styles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rishu Studios</title>
+  <link rel="icon" type="image/png" href="favicon.ico" />
   <style>
     body {
-      font-family: 'Quicksand', sans-serif;
-      background-color: #fffaf5;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(145deg, #fef7ff, #f9f4fc);
+      font-family: 'Georgia', serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow-x: hidden;
     }
 
-    h1, h2, h3 {
-      font-family: 'Cormorant Infant', serif;
+    .container {
+      text-align: center;
+      animation: bounceIn 2s ease;
+      padding: 20px;
     }
 
-    .hamburger span {
-      display: block;
-      height: 3px;
-      width: 25px;
-      background: #333;
-      margin: 5px auto;
-      transition: all 0.3s ease-in-out;
+    .logo {
+      width: 160px;
+      max-width: 80%;
+      height: auto;
+      animation: float 3s ease-in-out infinite;
     }
 
-    .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translateY(8px);
+    h1 {
+      font-size: 2rem;
+      margin-top: 20px;
+      color: #4d004d;
     }
 
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
+    p {
+      font-size: 1.1rem;
+      color: #7a297a;
     }
 
-    .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translateY(-8px);
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    @keyframes bounceIn {
+      0% {
+        transform: scale(0.6);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      p {
+        font-size: 1rem;
+        padding: 0 10px;
+      }
+
+      .logo {
+        width: 140px;
+      }
     }
   </style>
 </head>
-
-<body class="text-gray-800">
-
-  <!-- Navbar -->
-  <nav class="p-6 bg-[#fdf2e9] shadow-md">
-    <div class="flex items-center justify-between">
-      <div class="text-3xl font-semibold lowercase tracking-wider">rishu studios</div>
-      <div id="menu-btn" class="hamburger md:hidden cursor-pointer">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-    <div id="menu" class="mt-4 space-y-2 md:space-y-0 md:space-x-6 md:mt-0 md:flex hidden">
-      <a href="#home" class="block hover:underline transition hover:text-pink-600">Home</a>
-      <a href="#about" class="block hover:underline transition hover:text-pink-600">About</a>
-      <a href="#projects" class="block hover:underline transition hover:text-pink-600">Projects</a>
-      <a href="#contact" class="block hover:underline transition hover:text-pink-600">Connect</a>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section id="home" class="flex flex-col items-center justify-center text-center py-20 px-6 bg-[#fff5ec] animate-fadeIn">
-    <img src="assets/images/rishu_logo.png" alt="rishu studios logo" class="w-28 mb-6 animate-bounceSlow" data-aos="fade-up" />
-    <h1 class="text-4xl sm:text-5xl font-bold mb-4" data-aos="fade-up" data-aos-delay="100">Welcome to rishu studios</h1>
-    <p class="text-base sm:text-lg max-w-xl" data-aos="fade-up" data-aos-delay="200">A cozy creative home where games, stories, and soul meet — lovingly built for kind futures and magical moments.</p>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-16 px-6 bg-white animate-fadeIn">
-    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" data-aos="fade-right">about us</h2>
-    <p class="max-w-3xl mx-auto text-center text-base sm:text-lg" data-aos="fade-left" data-aos-delay="100">rishu studios is a whimsical indie collective led by Shubhangi — where storytelling, soft tech, and soulful games grow. We believe in ethical, inclusive, emotionally rich worlds. Welcome to our cozy corner of the future.</p>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="py-16 px-6 bg-[#fdf2e9] animate-fadeIn">
-    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-6" data-aos="fade-up">our projects</h2>
-    <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-      <div class="bg-white rounded-2xl shadow-md p-6 transition-transform hover:scale-105" data-aos="zoom-in">
-        <h3 class="text-xl sm:text-2xl font-semibold mb-2">whimsy haven (game)</h3>
-        <p>A cozy, cottagecore game world filled with healing, tea parties, magical quests, and kindness. Coming soon under rishu studios.</p>
-      </div>
-      <div class="bg-white rounded-2xl shadow-md p-6 transition-transform hover:scale-105" data-aos="zoom-in" data-aos-delay="100">
-        <h3 class="text-xl sm:text-2xl font-semibold mb-2">in conversation with shubhangi (show)</h3>
-        <p>An inclusive talk series blending warmth, creativity, and care. Flexible set designs, emotional storytelling, and soulful guests.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 px-6 bg-white animate-fadeIn">
-    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-6" data-aos="fade-up">connect with us</h2>
-    <p class="text-center mb-4" data-aos="fade-up" data-aos-delay="100">Got questions, collab ideas, or just want to say hi?</p>
-    <form class="max-w-xl mx-auto space-y-4" data-aos="fade-up" data-aos-delay="200">
-      <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-xl" />
-      <input type="email" placeholder="Your Email" class="w-full p-3 border rounded-xl" />
-      <textarea placeholder="Your Message" rows="4" class="w-full p-3 border rounded-xl"></textarea>
-      <button class="bg-pink-200 hover:bg-pink-300 px-6 py-2 rounded-xl text-black font-semibold transition hover:scale-105">Send Message</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer class="text-center py-6 bg-[#fdf2e9] text-sm" data-aos="fade-in">
-    © 2025 rishu studios. all magic reserved.
-  </footer>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-
-    const menuBtn = document.getElementById("menu-btn");
-    const menu = document.getElementById("menu");
-
-    menuBtn.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
-      menuBtn.classList.toggle("active");
-    });
-  </script>
+<body>
+  <div class="container">
+    <img src="rishu-logo.png" alt="Rishu Studios Logo" class="logo" />
+    <h1>Rishu Studios</h1>
+    <p>Crafting stories, visuals & dreams that glow.</p>
+  </div>
 </body>
-
 </html>
