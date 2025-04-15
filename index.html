@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rishu studios</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- Tailwind & Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;600&family=Quicksand&display=swap" rel="stylesheet" />
+
+  <!-- Custom Tailwind Config for Animation -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            fadeIn: 'fadeIn 2s ease-out forwards',
+            bounceSlow: 'bounce 2s infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: 0, transform: 'translateY(20px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' },
+            },
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fffaf5;
+    }
+    h1, h2, h3 {
+      font-family: 'Cormorant Infant', serif;
+    }
+  </style>
+</head>
+
+<body class="text-gray-800">
+  <!-- Navbar -->
+  <nav class="flex flex-wrap justify-between items-center p-6 bg-[#fdf2e9] shadow-md">
+    <div class="text-3xl font-semibold lowercase tracking-wider">rishu studios</div>
+    <div class="space-x-4 text-sm sm:text-base mt-4 sm:mt-0">
+      <a href="#home" class="hover:underline transition-all hover:text-pink-600">Home</a>
+      <a href="#about" class="hover:underline transition-all hover:text-pink-600">About</a>
+      <a href="#projects" class="hover:underline transition-all hover:text-pink-600">Projects</a>
+      <a href="#contact" class="hover:underline transition-all hover:text-pink-600">Connect</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="flex flex-col items-center justify-center text-center py-20 px-6 bg-[#fff5ec] animate-fadeIn">
+    <img src="assets/images/rishu_logo.png" alt="rishu studios logo" class="w-28 mb-6 animate-bounceSlow" />
+    <h1 class="text-4xl sm:text-5xl font-bold mb-4">Welcome to rishu studios</h1>
+    <p class="text-base sm:text-lg max-w-xl">A cozy creative home where games, stories, and soul meet — lovingly built for kind futures and magical moments.</p>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 px-6 bg-white animate-fadeIn">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">about us</h2>
+    <p class="max-w-3xl mx-auto text-center text-base sm:text-lg">rishu studios is a whimsical indie collective led by Shubhangi — where storytelling, soft tech, and soulful games grow. We believe in ethical, inclusive, emotionally rich worlds. Welcome to our cozy corner of the future.</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 px-6 bg-[#fdf2e9] animate-fadeIn">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-6">our projects</h2>
+    <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+      <div class="bg-white rounded-2xl shadow-md p-6 transition-transform hover:scale-105">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-2">whimsy haven (game)</h3>
+        <p>A cozy, cottagecore game world filled with healing, tea parties, magical quests, and kindness. Coming soon under rishu studios.</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-md p-6 transition-transform hover:scale-105">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-2">in conversation with shubhangi (show)</h3>
+        <p>An inclusive talk series blending warmth, creativity, and care. Flexible set designs, emotional storytelling, and soulful guests.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-6 bg-white animate-fadeIn">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-6">connect with us</h2>
+    <p class="text-center mb-4">Got questions, collab ideas, or just want to say hi?</p>
+    <form class="max-w-xl mx-auto space-y-4">
+      <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-xl" />
+      <input type="email" placeholder="Your Email" class="w-full p-3 border rounded-xl" />
+      <textarea placeholder="Your Message" rows="4" class="w-full p-3 border rounded-xl"></textarea>
+      <button class="bg-pink-200 hover:bg-pink-300 px-6 py-2 rounded-xl text-black font-semibold transition hover:scale-105">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 bg-[#fdf2e9] text-sm">
+    © 2025 rishu studios. all magic reserved.
+  </footer>
+</body>
+
+</html>
