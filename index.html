@@ -13,6 +13,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;600&family=Quicksand&display=swap" rel="stylesheet" />
 
+  <!-- AOS Animate On Scroll -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
   <!-- Custom Tailwind Config for Animation -->
   <script>
     tailwind.config = {
@@ -39,46 +42,76 @@
       font-family: 'Quicksand', sans-serif;
       background-color: #fffaf5;
     }
+
     h1, h2, h3 {
       font-family: 'Cormorant Infant', serif;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 3px;
+      width: 25px;
+      background: #333;
+      margin: 5px auto;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translateY(8px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-8px);
     }
   </style>
 </head>
 
 <body class="text-gray-800">
+
   <!-- Navbar -->
-  <nav class="flex flex-wrap justify-between items-center p-6 bg-[#fdf2e9] shadow-md">
-    <div class="text-3xl font-semibold lowercase tracking-wider">rishu studios</div>
-    <div class="space-x-4 text-sm sm:text-base mt-4 sm:mt-0">
-      <a href="#home" class="hover:underline transition-all hover:text-pink-600">Home</a>
-      <a href="#about" class="hover:underline transition-all hover:text-pink-600">About</a>
-      <a href="#projects" class="hover:underline transition-all hover:text-pink-600">Projects</a>
-      <a href="#contact" class="hover:underline transition-all hover:text-pink-600">Connect</a>
+  <nav class="p-6 bg-[#fdf2e9] shadow-md">
+    <div class="flex items-center justify-between">
+      <div class="text-3xl font-semibold lowercase tracking-wider">rishu studios</div>
+      <div id="menu-btn" class="hamburger md:hidden cursor-pointer">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div id="menu" class="mt-4 space-y-2 md:space-y-0 md:space-x-6 md:mt-0 md:flex hidden">
+      <a href="#home" class="block hover:underline transition hover:text-pink-600">Home</a>
+      <a href="#about" class="block hover:underline transition hover:text-pink-600">About</a>
+      <a href="#projects" class="block hover:underline transition hover:text-pink-600">Projects</a>
+      <a href="#contact" class="block hover:underline transition hover:text-pink-600">Connect</a>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <section id="home" class="flex flex-col items-center justify-center text-center py-20 px-6 bg-[#fff5ec] animate-fadeIn">
-    <img src="assets/images/rishu_logo.png" alt="rishu studios logo" class="w-28 mb-6 animate-bounceSlow" />
-    <h1 class="text-4xl sm:text-5xl font-bold mb-4">Welcome to rishu studios</h1>
-    <p class="text-base sm:text-lg max-w-xl">A cozy creative home where games, stories, and soul meet — lovingly built for kind futures and magical moments.</p>
+    <img src="assets/images/rishu_logo.png" alt="rishu studios logo" class="w-28 mb-6 animate-bounceSlow" data-aos="fade-up" />
+    <h1 class="text-4xl sm:text-5xl font-bold mb-4" data-aos="fade-up" data-aos-delay="100">Welcome to rishu studios</h1>
+    <p class="text-base sm:text-lg max-w-xl" data-aos="fade-up" data-aos-delay="200">A cozy creative home where games, stories, and soul meet — lovingly built for kind futures and magical moments.</p>
   </section>
 
   <!-- About Section -->
   <section id="about" class="py-16 px-6 bg-white animate-fadeIn">
-    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">about us</h2>
-    <p class="max-w-3xl mx-auto text-center text-base sm:text-lg">rishu studios is a whimsical indie collective led by Shubhangi — where storytelling, soft tech, and soulful games grow. We believe in ethical, inclusive, emotionally rich worlds. Welcome to our cozy corner of the future.</p>
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" data-aos="fade-right">about us</h2>
+    <p class="max-w-3xl mx-auto text-center text-base sm:text-lg" data-aos="fade-left" data-aos-delay="100">rishu studios is a whimsical indie collective led by Shubhangi — where storytelling, soft tech, and soulful games grow. We believe in ethical, inclusive, emotionally rich worlds. Welcome to our cozy corner of the future.</p>
   </section>
 
   <!-- Projects Section -->
   <section id="projects" class="py-16 px-6 bg-[#fdf2e9] animate-fadeIn">
-    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-6">our projects</h2>
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-6" data-aos="fade-up">our projects</h2>
     <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-      <div class="bg-white rounded-2xl shadow-md p-6 transition-transform hover:scale-105">
+      <div class="bg-white rounded-2xl shadow-md p-6 transition-transform hover:scale-105" data-aos="zoom-in">
         <h3 class="text-xl sm:text-2xl font-semibold mb-2">whimsy haven (game)</h3>
         <p>A cozy, cottagecore game world filled with healing, tea parties, magical quests, and kindness. Coming soon under rishu studios.</p>
       </div>
-      <div class="bg-white rounded-2xl shadow-md p-6 transition-transform hover:scale-105">
+      <div class="bg-white rounded-2xl shadow-md p-6 transition-transform hover:scale-105" data-aos="zoom-in" data-aos-delay="100">
         <h3 class="text-xl sm:text-2xl font-semibold mb-2">in conversation with shubhangi (show)</h3>
         <p>An inclusive talk series blending warmth, creativity, and care. Flexible set designs, emotional storytelling, and soulful guests.</p>
       </div>
@@ -87,9 +120,9 @@
 
   <!-- Contact Section -->
   <section id="contact" class="py-16 px-6 bg-white animate-fadeIn">
-    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-6">connect with us</h2>
-    <p class="text-center mb-4">Got questions, collab ideas, or just want to say hi?</p>
-    <form class="max-w-xl mx-auto space-y-4">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-6" data-aos="fade-up">connect with us</h2>
+    <p class="text-center mb-4" data-aos="fade-up" data-aos-delay="100">Got questions, collab ideas, or just want to say hi?</p>
+    <form class="max-w-xl mx-auto space-y-4" data-aos="fade-up" data-aos-delay="200">
       <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-xl" />
       <input type="email" placeholder="Your Email" class="w-full p-3 border rounded-xl" />
       <textarea placeholder="Your Message" rows="4" class="w-full p-3 border rounded-xl"></textarea>
@@ -98,9 +131,23 @@
   </section>
 
   <!-- Footer -->
-  <footer class="text-center py-6 bg-[#fdf2e9] text-sm">
+  <footer class="text-center py-6 bg-[#fdf2e9] text-sm" data-aos="fade-in">
     © 2025 rishu studios. all magic reserved.
   </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const menuBtn = document.getElementById("menu-btn");
+    const menu = document.getElementById("menu");
+
+    menuBtn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+      menuBtn.classList.toggle("active");
+    });
+  </script>
 </body>
 
 </html>
